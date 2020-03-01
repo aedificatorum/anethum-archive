@@ -1,8 +1,9 @@
 FROM node:12.16
 
-WORKDIR /usr
-ADD package.json .
-RUN yarn install 
-ADD . .
+WORKDIR /usr/src/app
+COPY package.json .
+COPY yarn.lock .
+RUN yarn install --frozen-lockfile
+COPY . .
 EXPOSE 8881
-CMD ["node", "index"]
+CMD ["yarn", "start"]
