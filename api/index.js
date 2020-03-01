@@ -6,6 +6,8 @@ app.get('/api', (req, res, next) => {
   res.send('hello')
 })
 
-const server = app.listen(8881, function() {
+const port = process.env.PORT || 8881;
+
+const server = app.listen(port, function() {
   console.log("listening")
 })
