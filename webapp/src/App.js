@@ -7,7 +7,7 @@ function App() {
       <button onClick={async () => {
         const yo = await fetch("/api")
         alert(await yo.text())
-        }}>Click ME</button>
+        }}>Click Me</button>
     </div>
   );
 }
