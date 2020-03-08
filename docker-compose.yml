@@ -1,0 +1,26 @@
+version: "3.7"
+services:
+  anethum-webapp:
+    container_name: anethum-webapp
+    build:
+      context: ./webapp
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - "./webapp:/app"
+      - "/app/node_modules"
+    environment:
+      - NODE_ENV=development
+  anethum-api:
+    container_name: anethum-api
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    ports:
+      - "8881:8881"
+    volumes:
+      - "./api:/app"
+      - "/app/node_modules"
+    environment:
+      - NODE_ENV=development
