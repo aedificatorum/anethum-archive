@@ -1,7 +1,12 @@
 # Anethum
 
+## Command
+- docker-compose up --build
+- docker-compose up
+
+
 ## To Do
 
-- [ ] Create dockerfile in webapp
-- [ ] Create dockercompose for app
-- [ ] Deploy to Heroku
+- [x] Create dockerfile in webapp
+- [x] Create dockercompose for app
+- [x] Deploy to Heroku
