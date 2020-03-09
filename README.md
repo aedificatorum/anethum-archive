@@ -33,7 +33,7 @@ Currently doesn't work!  Needs updating:
 # Build and tag the api image
 docker build -t anethum-api .
 # Run the api exposing port 8881
-docker run -p8881:8881 anethum-api
+docker run -v ${PWD}:/app -v /app/node_modules -p8881:8881 anethum-api
 ```
 
 ### Api
