@@ -1,8 +1,8 @@
 server {
-  listen 80;
+  listen $PORT;
 
   location /api {
-    proxy_pass http://anethum-api:8881/api/;
+    proxy_pass http://anethum-api:8881/api;
   }
 
   location / {

@@ -7,6 +7,10 @@ services:
       dockerfile: Dockerfile.prod
     ports:
       - "80:80"
+    depends_on:
+      - anethum-api
+    environment:
+      - PORT=80
   anethum-api:
     container_name: anethum-api
     build:
