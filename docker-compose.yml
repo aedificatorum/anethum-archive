@@ -12,6 +12,7 @@ services:
       - "/app/node_modules"
     environment:
       - NODE_ENV=development
+    depends_on: anethum-api
   anethum-api:
     container_name: anethum-api
     build:
