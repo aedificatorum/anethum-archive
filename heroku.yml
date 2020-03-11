@@ -1,4 +1,3 @@
 build:
   docker:
-    web: webapp/Dockerfile.prod
-    api: api/Dockerfile
+    web: Dockerfile.prod
