@@ -31,19 +31,12 @@ docker run -v ${PWD}:/app -v /app/node_modules -p 3001:3000 --rm anethum-webapp
 
 ## Production
 
-The production image serves the webapp via an nginx container, and proxies calls to /api to an api container. 
+The production image builds the webapp and places it in the `/public` folder of the api container, hosting a single image only.
 
 ### Deploy to Heroku
 
 Uses the `heroku.yml` file and expects the stack to be `container`.
 
-#### To Do
-- [ ] Expose ports correctly on heroku
-- [ ] Create a production Dockerfile for the api
-- [ ] Update production docker-compose to not mount the api volumes
-- [ ] Update 404/500/etc. error pages for nginx
+## What's Missing?
 
-## Misc
-Following: https://mherman.org/blog/dockerizing-a-react-app/
-Also: https://medium.com/swlh/dockerizing-a-react-application-with-docker-and-nginx-19e88ef8e99a
-And: https://www.docker.com/blog/keep-nodejs-rockin-in-docker/
+The database.  Aim to use Hasura/Postgres for heroku in production (deployed to a different heroku upp), and additional containers for development.
