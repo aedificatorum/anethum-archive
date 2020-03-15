@@ -39,5 +39,6 @@ services:
       - POSTGRES_DB=anethum
     volumes:
       - pgdata:/var/lib/postgresql/data
+      - ./db/01-schema.sql:/docker-entrypoint-initdb.d/01-schema.sql
 volumes:
   pgdata:
