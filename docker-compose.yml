@@ -26,6 +26,11 @@ services:
       - "/app/node_modules"
     environment:
       - NODE_ENV=development
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+      - DB_HOST=anethum-db
+      - DB_PORT=5432
+      - DB_DATABASE=anethum
     depends_on:
       - anethum-db
   anethum-db:
