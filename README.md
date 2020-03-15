@@ -34,6 +34,8 @@ docker run -v ${PWD}:/app -v /app/node_modules -p 3001:3000 --rm anethum-webapp
 ### Resetting the DB data/config
 
 ```bash
+docker-compose down # or trash from the docker dashboard
+
 docker volume rm anethum_pgdata
 ```
 
