@@ -15,7 +15,7 @@ docker-compose up
 
 By default the local application directories are mounted as volumes in the containers, with support for hot reload in both.
 
-> To install any additional packages make sure you skip the cache!  One of either `--nocache` or removing all the existing images should get it to work.
+> To install any additional packages make sure you skip the cache!  One of either `docker-compose build --no-cache` or removing all the existing images should get it to work.
 
 ### Run individual images
 
