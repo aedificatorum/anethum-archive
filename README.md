@@ -8,14 +8,14 @@ Run the API and WebApp:
 
 ```bash
 # Build
-docker-compose up --build
+docker-compose up --build --renew-anon-volumes
 # Or just run
 docker-compose up
 ```
 
 By default the local application directories are mounted as volumes in the containers, with support for hot reload in both.
 
-> To install any additional packages and get them to work in the container you may need to bring the container down and rebuild skipping the cache - `docker-compose down` and `docker-compose build --nocache`.
+> Because we want to use the container's `node_modules` folder we mount it as an anonymous volume.  This causes problems when you install a new dependency (`yarn add xx` in the source project) as Docker will _reuse_ the previous anonymous volume.  `renew-anon-volumes` takes care of that for us.
 
 ### Run individual images
 
